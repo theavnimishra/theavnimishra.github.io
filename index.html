@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    :root {
+        --cl1: #be6fef;
+        --cl2: #6fefd3;
+        --cl3: #ef6fed;
+        --cl4: #7cef6f;
+        --cl5: #611578;
+        box-sizing: border-box;
+    }
+    body {display: flex;justify-content: center;align-items: center;min-height: 100vh;background: linear-gradient(0deg,var(--cl5),var(--cl3),var(--cl1));font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
+    h1   {color: blue;}
+    p    {color: red;}
+    .box1 {position: relative;display: flex;justify-content: center;align-items: center; font-size: 5em;margin: 8px;padding: 8px;border-radius: 10px;overflow: hidden;background-color: var(--cl1);height: 150px;box-shadow: 0 0 20px white;width: 250px;}
+    .box2 {position: relative;display: flex;justify-content: center;align-items: center; font-size: 5em;margin: 8px;padding: 8px;border-radius: 10px; display: inline-flex;background-color:var(--cl4);height: 150px;box-shadow: 0 0 20px white;}
+    .box1::before {
+        content: '';position: absolute;background-color: var(--cl2);box-shadow: 0 0 20px rgb(237, 181, 242);height: 400%;width: 100px;animation: an2 4s cubic-bezier(0.3, -0.10, 0.35, 0.045) infinite;}
+    .box1::after {
+        content: 'AVNI'; position: absolute;display: flex;justify-content: center;align-items: center;inset: 10px; border-radius: 10px;background-color: #611578;
+    }
+    .box1:hover+.box2 { animation: ani1 3s ease 0s 1 forwards;}
+    .box2:hover {background-color: var(--cl3);box-shadow: 118px 118px 40px var(--cl1); transition: all 3s ease-in;}
+    @keyframes an2 {
+        0% {transform: rotate(0);}
+        100% {transform: rotate(360deg);}
+    }
+    @keyframes ani1 {
+        0% {transform: rotate(0);}
+        100% {transform: rotate(270deg);}
+    }
+</style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2">MISHRA</div>
+</body>
+</html>
